@@ -18,6 +18,10 @@ except:
 from torch import device
 import torchvision
 
+# Add this at the top of scripts/inference.py
+import sys
+sys.path.append('/home/gokul/Hier-Legal-Graph/mimic_dataset/mimiciv_dataset/2.2/ObjectStitch-Image-Composition/src')
+
 proj_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(proj_dir)
 sys.path.insert(0, proj_dir)
