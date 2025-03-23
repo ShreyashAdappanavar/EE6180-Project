@@ -3,3 +3,4 @@ checkpoints/*.pth
 *.egg-info
 *__pycache__
 
+**/Object-Stitch/
