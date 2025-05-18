@@ -3,7 +3,7 @@
 **IMPORTANT NOTE:**  
 The test.sh script has been updated to perform more experiments. It must now be executed using bash (i.e., run with "bash test.sh" instead of "sh test.sh") due to the automation of multiple experiments within the script.
 
-```
+
 # Mask Generation Scripts
 
 This repository provides scripts to generate binary masks for foreground and background images to be used as model inputs.
@@ -41,4 +41,3 @@ The scripts generate the following directories:
 - `mask_bbox/`: Contains binary background masks.
 
 These folders serve as input to the model.
-```
