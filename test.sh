@@ -1,7 +1,18 @@
 #!/bin/bash
 
-declare -a sample_steps_array=(500 50 5 1)
-declare -a num_samples_array=(2 4)
+## Run these commands in the same order to run the test.sh script:
+# conda deactivate
+# conda deactivate
+# conda activate Object-Stitch
+# export PYTHONPATH=$PYTHONPATH:$(pwd)/src/taming-transformers
+# chmod +x test.sh
+# bash test.sh
+
+#### OR, JUST COPY THIS (REMEMBER TO CHANGE THE PATH WHERE YOUR ENV IS LOCATED)
+# cd /home/gokul/Hier-Legal-Graph/mimic_dataset/mimiciv_dataset/2.2/Tempp/ObjectStitch-Image-Composition && conda deactivate && conda deactivate && conda activate Object-Stitch && export PYTHONPATH=$PYTHONPATH:$(pwd)/src/taming-transformers && chmod +x test.sh && bash test.sh
+
+declare -a sample_steps_array=(100)
+declare -a num_samples_array=(3)
 
 # Run experiments for each configuration
 for steps in "${sample_steps_array[@]}"; do
@@ -12,12 +23,12 @@ for steps in "${sample_steps_array[@]}"; do
     
     echo "Running experiment with sample_steps=$steps, num_samples=$samples"
 
-    python scripts/inference.py \
+    python3 scripts/inference.py \
       --outdir "$results_dir" \
-      --testdir examples \
+      --testdir Generate_Masks \
       --num_samples "$samples" \
       --sample_steps "$steps" \
-      --gpu 0
+      --gpu 1
 
     echo "Completed experiment with sample_steps=$steps, num_samples=$samples"
     echo "Results saved in: $results_dir"
@@ -27,7 +38,7 @@ for steps in "${sample_steps_array[@]}"; do
 done
 
 ######################################################################
-# source ~/Hier-Legal-Graph/mimic_dataset/mimiciv_dataset/2.2/ObjectStitch-Image-Composition/Object-Stitch/bin/activate
+# source /home/gokul/Hier-Legal-Graph/mimic_dataset/mimiciv_dataset/2.2/Tempp/ObjectStitch-Image-Composition/Object-Stitch/bin/activate
 # python scripts/inference.py \
 # --outdir results \
 # --testdir examples \
@@ -36,9 +47,6 @@ done
 # --gpu 0
 
 ######################################################################
-# I need to run these commands before running the bash tesh.sh command
-# conda deactivate
-# conda deactivate
-# source Object-Stitch/bin/activate
-# export PYTHONPATH=$PYTHONPATH:$(pwd)/src/taming-transformers
-#
+# I need to run these commands before running the bash test.sh command
+
+# cd /home/gokul/Hier-Legal-Graph/mimic_dataset/mimiciv_dataset/2.2/Tempp/ObjectStitch-Image-Composition && conda deactivate && conda deactivate && conda activate Object-Stitch && export PYTHONPATH=$PYTHONPATH:$(pwd)/src/taming-transformers && chmod +x test.sh && bash test.sh
