@@ -6,7 +6,7 @@ The test.sh script has been updated to perform more experiments. It must now be 
 
 ## Mask Generation Scripts
 
-This repository provides scripts to generate binary masks for foreground and background images to be used as model inputs.
+This repository provides scripts to generate binary masks for foreground and background images to be used as model inputs. These scripts need to be run once to generate the input images to the model.
 
 ### Requirements Before Running
 
