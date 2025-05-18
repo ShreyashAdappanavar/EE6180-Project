@@ -28,10 +28,10 @@ pip install git+[https://github.com/facebookresearch/segment-anything.git](https
 
 ### Scripts
 
-### Generate_Masks/segment_script.py
+#### Generate_Masks/segment_script.py
 Automatically generates binary foreground masks using Meta's Segment Anything Model (SAM). For each image, it selects the largest mask region and saves it as a binary mask.
 
-#### Generate_Masks/background_mask.py
+##### Generate_Masks/background_mask.py
 Allows manual drawing of a square bounding box on each background image. The selected region is saved as a binary mask with the square in white and the rest in black.
 
 ### Output
